@@ -25,7 +25,7 @@ public class BombInformations {
             Scanner scanner = new Scanner(System.in);
             System.out.println("is there a lit indicator with label FRK (y/n)? ");
             String userInput = scanner.nextLine().toLowerCase();
-            if (userInput == "y" || userInput == "yes") {
+            if (userInput.equals("y") || userInput.equals("yes")) {
                 frkLabel = true;
             } else {
                 frkLabel = false;
@@ -39,7 +39,7 @@ public class BombInformations {
             Scanner scanner = new Scanner(System.in);
             System.out.println("is there a lit indicator with label CAR (y/n)? ");
             String userInput = scanner.nextLine().toLowerCase();
-            if (userInput == "y" || userInput == "yes") {
+            if (userInput.equals("y") || userInput.equals("yes")) {
                 carLabel = true;
             } else {
                 carLabel = false;
@@ -53,7 +53,7 @@ public class BombInformations {
             Scanner scanner = new Scanner(System.in);
             System.out.println("is the serial number odd (y/n)? ");
             String userInput = scanner.nextLine().toLowerCase();
-            if (userInput == "y" || userInput == "yes") {
+            if (userInput.equals("y") || userInput.equals("yes")) {
                 serialNumberOdd = true;
             } else {
                 serialNumberOdd = false;
@@ -67,7 +67,7 @@ public class BombInformations {
             Scanner scanner = new Scanner(System.in);
             System.out.println("is the serial number contains vowel (y/n)? ");
             String userInput = scanner.nextLine().toLowerCase();
-            if (userInput == "y" || userInput == "yes") {
+            if (userInput.equals("y") || userInput.equals("yes")) {
                 vowelInSerialNumber = true;
             } else {
                 vowelInSerialNumber = false;
@@ -81,7 +81,7 @@ public class BombInformations {
             Scanner scanner = new Scanner(System.in);
             System.out.println("is there any parallel ports (y/n)? ");
             String userInput = scanner.nextLine().toLowerCase();
-            if (userInput == "y" || userInput == "yes") {
+            if (userInput.equals("y") || userInput.equals("yes")) {
                 parallelPort = true;
             } else {
                 parallelPort = false;
