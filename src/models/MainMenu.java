@@ -18,7 +18,7 @@ public class MainMenu {
             stringUtils.askUserForChoice();
             int userChoice = scanner.nextInt();
 
-            if (userChoice == 1){
+            if (userChoice == 1) {
                 WireSolver.initializeWireSolver();
             } else if (userChoice == 4) {
                 PasswordSolver.initializePasswordSolver();
