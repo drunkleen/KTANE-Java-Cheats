@@ -58,26 +58,20 @@ public class WireSolver {
         wireCount = wireColors.length;
 
         for (String wire : wireColors) {
-            System.out.println(wire);
-            if (wire == "red") {
+            if (wire.equals("red")) {
                 countUp("red");
-            } else if (wire == "blue") {
+            } else if (wire.equals("blue")) {
                 countUp("blue");
-            } else if (wire == "black") {
+            } else if (wire.equals("black")) {
                 countUp("black");
-            } else if (wire == "yellow") {
+            } else if (wire.equals("yellow")) {
                 countUp("yellow");
-            } else if (wire == "white") {
+            } else if (wire.equals("white")) {
                 countUp("white");
             } else {
                 System.out.println("Color " + wire + " not Found");
             }
         }
-        System.out.println(blackWireCount);
-        System.out.println(redWireCount);
-        System.out.println(blueWireCount);
-        System.out.println(yellowWireCount);
-        System.out.println(whiteWireCount);
 
         if (wireCount == 3) {
             if (redWireCount == 0) {
