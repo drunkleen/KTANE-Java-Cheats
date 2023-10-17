@@ -1,4 +1,5 @@
 package models;
+
 import static models.StringUtils.*;
 
 public class Utils {
@@ -14,10 +15,11 @@ public class Utils {
     }
 
     public String title(String title) {
-        return boldText( ANSI_GREEN + title + ANSI_WHITE);
+        return boldText(ANSI_GREEN + title + ANSI_WHITE);
     }
+
     public String solvationText(String solvation) {
-        return boldText( ANSI_YELLOW + "Solved: " + ANSI_WHITE) + solvation;
+        return boldText(ANSI_YELLOW + "Solved: " + ANSI_WHITE) + solvation;
     }
 
 }
