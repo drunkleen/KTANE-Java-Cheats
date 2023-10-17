@@ -33,17 +33,7 @@ public class WireSolver {
             return wireManager.solveIfFiveWires();
 
         } else if (wireCount == 6) {
-
-            if (yellowWireCount == 0 && bombInformations.getSerialNumberOdd()) {
-                return "cut the 3th wire.";
-            } else if (yellowWireCount == 1 && whiteWireCount > 1) {
-                return "cut the 4th wire.";
-            } else if (redWireCount == 0) {
-                return "cut the last wire.";
-            } else {
-                return "cut the 4th wire.";
-            }
-
+            return wireManager.solveIfSixWires();
         } else {
             System.out.println("Invalid wire count");
         }

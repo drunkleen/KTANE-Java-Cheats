@@ -61,6 +61,22 @@ public class WireManager {
         }
     }
 
+    public String solveIfSixWires() {
+        if (yellowWireCount == 0 && bombInformations.getSerialNumberOdd()) {
+            resetColorCount();
+            return "cut the 3th wire.";
+        } else if (yellowWireCount == 1 && whiteWireCount > 1) {
+            resetColorCount();
+            return "cut the 4th wire.";
+        } else if (redWireCount == 0) {
+            resetColorCount();
+            return "cut the last wire.";
+        } else {
+            resetColorCount();
+            return "cut the 4th wire.";
+        }
+    }
+
     public String[] wireColors() {
         Scanner scanner = new Scanner(System.in);
         System.out.println(
