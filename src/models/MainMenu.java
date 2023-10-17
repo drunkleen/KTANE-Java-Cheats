@@ -18,17 +18,17 @@ public class MainMenu {
             int userChoice = scanner.nextInt();
             if (userChoice == 1) {
                 PasswordSolver.initializePasswordSolver();
-                if(!hasNext()) showMenu();
+            } else {
+                break;
             }
+            pressToContinue();
         }
     }
 
-
-
-    public static boolean hasNext() {
+    public static void  pressToContinue() {
         System.out.println(utils.boldText("\nPress 'Enter' to return."));
         Scanner scanner = new Scanner(System.in);
-        return scanner.hasNext();
+        scanner.nextLine();
     }
 
 }
