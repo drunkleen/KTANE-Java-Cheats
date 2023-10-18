@@ -1,6 +1,6 @@
-package models;
+package packages;
 
-import static models.StringUtils.*;
+import static packages.StringUtils.*;
 
 public class Utils {
 

@@ -1,4 +1,4 @@
-package models;
+package packages;
 
 import java.util.Scanner;
 
@@ -49,4 +49,5 @@ public class ButtonManager {
             return "release when the countdown timer has a 1 in any position.";
         }
     }
+
 }

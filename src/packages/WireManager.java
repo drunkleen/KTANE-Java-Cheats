@@ -1,11 +1,11 @@
-package models;
+package packages;
 
 import lombok.Data;
 
 import java.util.Scanner;
 
-import static models.StringUtils.ANSI_WHITE;
-import static models.StringUtils.ANSI_YELLOW;
+import static packages.StringUtils.ANSI_WHITE;
+import static packages.StringUtils.ANSI_YELLOW;
 
 @Data
 public class WireManager {

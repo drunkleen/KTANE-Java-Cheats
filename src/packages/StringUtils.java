@@ -1,4 +1,4 @@
-package models;
+package packages;
 
 import java.util.Scanner;
 
@@ -108,6 +108,17 @@ public class StringUtils {
                         "2. " + ANSI_YELLOW + "Yellow.\n" + ANSI_WHITE +
                         "3. " + ANSI_BLUE + "Blue.\n" + ANSI_WHITE +
                         "4. " + ANSI_WHITE + "White." + ANSI_WHITE
+        );
+    }
+
+    public void askUserForFlashLightColor() {
+        utils.clearScreen();
+        System.out.println(utils.title("Which is the light?"));
+        System.out.println(
+                "1. " + ANSI_RED + "Red.\n" + ANSI_WHITE +
+                "2. " + ANSI_YELLOW + "Yellow.\n" + ANSI_WHITE +
+                "3. " + ANSI_BLUE + "Blue.\n" + ANSI_WHITE +
+                "4. " + ANSI_GREEN + "Green." + ANSI_WHITE
         );
     }
 

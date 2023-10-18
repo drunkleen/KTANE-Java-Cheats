@@ -1,6 +1,4 @@
-package models;
-
-import static models.WireManager.*;
+package packages;
 
 public class WireSolver {
     private static final WireManager wireManager = new WireManager();

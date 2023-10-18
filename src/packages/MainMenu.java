@@ -1,10 +1,9 @@
-package models;
+package packages;
 
-import java.awt.*;
 import java.util.Scanner;
 
-import static models.StringUtils.ANSI_RED;
-import static models.StringUtils.ANSI_WHITE;
+import static packages.StringUtils.ANSI_RED;
+import static packages.StringUtils.ANSI_WHITE;
 
 public class MainMenu {
     private static final StringUtils stringUtils = new StringUtils();
@@ -27,6 +26,8 @@ public class MainMenu {
                 WireSolver.initializeWireSolver();
             } else if (userChoice == 2) {
                 ButtonSolver.initializeButtonSolver();
+            } else if (userChoice == 3) {
+                SimonSaysSolver.initializeSimonSaysSolver();
             } else if (userChoice == 4) {
                 PasswordSolver.initializePasswordSolver();
             } else if (userChoice == 0) {
