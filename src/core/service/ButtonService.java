@@ -1,12 +1,35 @@
-package packages;
+package core.service;
+
+import core.util.BombInformation;
+import core.facade.ProblemSolver;
+import core.util.StringUtils;
+import core.util.Utils;
 
 import java.util.Scanner;
 
-public class ButtonManager {
-    BombInformation bombInformation = new BombInformation();
-    StringUtils stringUtils = new StringUtils();
+public class ButtonService implements ProblemSolver {
+    private final StringUtils stringUtils = new StringUtils();
+    private final BombInformation bombInformation = new BombInformation();
 
-    public String solve(int buttonChoice, int buttonColorChoice) {
+    public void initializeButtonSolver() {
+        Utils utils = new Utils();
+        String solvedText = this.solve();
+        utils.clearScreen();
+        System.out.println(utils.solvationText(solvedText));
+    }
+
+    @Override
+    public String solve() {
+        stringUtils.askUserForChoiceButtonLabel();
+        Scanner scanner = new Scanner(System.in);
+
+        int buttonChoice = scanner.nextInt();
+        stringUtils.askUserForChoiceButtonColor();
+        int buttonColorChoice = scanner.nextInt();
+        return getCorrectReleaseTime(buttonChoice, buttonColorChoice);
+    }
+
+    public String getCorrectReleaseTime(int buttonChoice, int buttonColorChoice) {
         if (buttonColorChoice == 3 && buttonChoice == 4) {
             return buttonHeld();
 
@@ -49,5 +72,5 @@ public class ButtonManager {
             return "release when the countdown timer has a 1 in any position.";
         }
     }
-
 }
+

@@ -1,17 +1,16 @@
-package packages;
+package core.util;
+
+import core.facade.ProblemSolverImpl;
 
 import java.util.Scanner;
 
-import static packages.StringUtils.ANSI_RED;
-import static packages.StringUtils.ANSI_WHITE;
+import static core.util.StringUtils.ANSI_RED;
+import static core.util.StringUtils.ANSI_WHITE;
 
 public class MainMenu {
     private final StringUtils stringUtils = new StringUtils();
     private final Utils utils = new Utils();
-    private final WireSolver wireSolver = new WireSolver();
-    private final ButtonSolver buttonSolver = new ButtonSolver();
-    private final SimonSaysSolver simonSaysSolver = new SimonSaysSolver();
-    private final PasswordSolver passwordSolver = new PasswordSolver();
+    ProblemSolverImpl problemSolver = new ProblemSolverImpl();
 
     private final BombInformation bombInformation = new BombInformation();
 
@@ -27,16 +26,16 @@ public class MainMenu {
             int userChoice = scanner.nextInt();
 
             if (userChoice == 1) {
-                wireSolver.initializeWireSolver();
+                problemSolver.solveWires();
             }
             else if (userChoice == 2) {
-                buttonSolver.initializeButtonSolver();
+                problemSolver.solveButton();
             }
             else if (userChoice == 3) {
-                simonSaysSolver.initializeSimonSaysSolver();
+                problemSolver.solveSimonSays();
             }
             else if (userChoice == 4) {
-                passwordSolver.initializePasswordSolver();
+                problemSolver.solvePassword();
             }
             else if (userChoice == 0) {
                 bombInformation.strikeUp();

@@ -1,20 +1,22 @@
-package packages;
+package core.service;
 
 
-public class PasswordSolver {
+import core.facade.ProblemSolver;
+import core.util.StringUtils;
+import core.util.Utils;
+
+public class PasswordService implements ProblemSolver {
     private final StringUtils stringUtils = new StringUtils();
 
     public void initializePasswordSolver() {
         Utils utils = new Utils();
-//        Scanner scanner = new Scanner(System.in); //not used
-        String solvedText = this.solver();
+        String solvedText = this.solve();
         utils.clearScreen();
         System.out.println(utils.solvationText(solvedText));
-
-//        scanner.nextLine();
     }
 
-    private String solver() {
+    @Override
+    public String solve() {
         String[] passwordEntries = stringUtils.getPasswordEntries();
         for (String word : stringUtils.getWords()) {
             if (

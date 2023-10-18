@@ -1,13 +1,17 @@
-package packages;
+package core.service;
 
+import core.util.BombInformation;
+import core.facade.ProblemSolver;
+import core.util.Utils;
 import lombok.Data;
 
 import java.util.Scanner;
 
-import static packages.StringUtils.*;
+import static core.util.StringUtils.*;
+import static core.util.StringUtils.WHITE;
 
 @Data
-public class WireManager {
+public class WireService implements ProblemSolver {
     private int wireCount = 0;
     private int redWireCount = 0;
     private int blueWireCount = 0;
@@ -15,6 +19,37 @@ public class WireManager {
     private int yellowWireCount = 0;
     private int whiteWireCount = 0;
 
+    public void initializeWireSolver() {
+        Utils utils = new Utils();
+        String solvedText = solve();
+        utils.clearScreen();
+        System.out.println(utils.solvationText(solvedText));
+    }
+
+    @Override
+    public String solve() {
+        String[] wireColorList = wireColors();
+        wireCount = wireColorList.length;
+
+        setColorCount();
+
+        if (wireCount == 3) {
+            return solveIfThreeWires();
+
+        } else if (wireCount == 4) {
+            return solveIfFourWires();
+
+        } else if (wireCount == 5) {
+            return solveIfFiveWires();
+
+        } else if (wireCount == 6) {
+            return solveIfSixWires();
+        } else {
+            System.out.println("Invalid wire count");
+        }
+
+        return "Wire count invalid.";
+    }
 
     BombInformation bombInformation = new BombInformation();
     private String[] wireColors;
@@ -132,6 +167,5 @@ public class WireManager {
             }
         }
     }
-
 
 }

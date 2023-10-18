@@ -1,6 +1,6 @@
-package packages;
+package core.util;
 
-import static packages.StringUtils.*;
+import static core.util.StringUtils.*;
 
 public class Utils {
 
