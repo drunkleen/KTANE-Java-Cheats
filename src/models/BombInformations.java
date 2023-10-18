@@ -91,11 +91,12 @@ public class BombInformations {
     }
 
     public int getStrikes() {
-        return (strikes == null) ? 0: strikes;
+        return (strikes == null) ? 0 : strikes;
     }
 
     public void strikeUp() {
-        strikes = (strikes == null) ? 1: strikes + 1;
+        strikes = (strikes == null) ? 1 : strikes + 1;
+    }
 
     public void resetBombInformation() {
         batteryCount = null;
@@ -105,6 +106,7 @@ public class BombInformations {
         vowelInSerialNumber = null;
         parallelPort = null;
         strikes = null;
+
     }
 }
 

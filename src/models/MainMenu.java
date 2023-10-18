@@ -35,7 +35,7 @@ public class MainMenu {
             if (bombInformations.getStrikes() > 2) {
                 bombInformations.resetBombInformation();
                 pressToPlayAgain();
-            } else if (bombInformations.getStrikes() < 3) {
+            } else if (userChoice == 0) {
                 continue;
             } else {
                 pressToContinue();
