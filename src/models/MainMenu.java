@@ -2,6 +2,9 @@ package models;
 
 import java.util.Scanner;
 
+import static models.StringUtils.ANSI_RED;
+import static models.StringUtils.ANSI_WHITE;
+
 public class MainMenu {
     private static final StringUtils stringUtils = new StringUtils();
     private static final Utils utils = new Utils();
@@ -11,6 +14,7 @@ public class MainMenu {
 
     public static void showMenu() {
         Scanner scanner = new Scanner(System.in);
+        BombInformations bombInformations = new BombInformations();
 
         boolean status = true;
 
@@ -22,16 +26,32 @@ public class MainMenu {
                 WireSolver.initializeWireSolver();
             } else if (userChoice == 4) {
                 PasswordSolver.initializePasswordSolver();
+            } else if (userChoice == 0) {
+                bombInformations.strikeUp();
             } else {
                 status = false;
                 break;
             }
-            pressToContinue();
+            if (bombInformations.getStrikes() > 2) {
+                bombInformations.resetBombInformation();
+                pressToPlayAgain();
+            } else if (bombInformations.getStrikes() < 3) {
+                continue;
+            } else {
+                pressToContinue();
+            }
+
         }
     }
 
     public static void pressToContinue() {
         System.out.println(utils.boldText("\nPress 'Enter' to return."));
+        Scanner scanner = new Scanner(System.in);
+        scanner.nextLine();
+    }
+
+    public static void pressToPlayAgain() {
+        System.out.println(utils.boldText(ANSI_RED + "\nYou Lost!" + ANSI_WHITE + "\nPress 'Enter' to play again."));
         Scanner scanner = new Scanner(System.in);
         scanner.nextLine();
     }

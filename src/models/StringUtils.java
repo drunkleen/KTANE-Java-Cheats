@@ -47,17 +47,31 @@ public class StringUtils {
         return entries;
     }
 
+    public int strikeManager() {
+        BombInformations bombInformations = new BombInformations();
+        if (bombInformations.getStrikes() >= 3) {
+            bombInformations.resetBombInformation();
+        }
+        return bombInformations.getStrikes();
+    }
+
     public void askUserForChoice() {
         utils.clearScreen();
+        BombInformations bombInformations = new BombInformations();
         System.out.println(utils.title("Welcome to KTANE Cheat!!!"));
         System.out.println(
                 """
                         1. Wire Solver.
                         2. Button Solver.
                         3. Simon Says Solver.
-                        4. Password Solver
+                        4. Password Solver.
                         """
         );
+        if (bombInformations.getStrikes() <= 0) {
+            System.out.println("0. Strike");
+        } else {
+            System.out.println("0. Strike" + "[" + bombInformations.getStrikes() + "]");
+        }
     }
 
 }

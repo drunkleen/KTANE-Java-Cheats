@@ -91,16 +91,22 @@ public class BombInformations {
     }
 
     public int getStrikes() {
-        if (strikes == null) {
-            Scanner scanner = new Scanner(System.in);
-            System.out.println("How many strikes do you have (0-2)? ");
-            strikes = scanner.nextInt();
-        }
-        if (strikes > 2) {
-            return -1;
-        }
-        return strikes;
+        return (strikes == null) ? 0: strikes;
+    }
+
+    public void strikeUp() {
+        strikes = (strikes == null) ? 1: strikes + 1;
+
+    public void resetBombInformation() {
+        batteryCount = null;
+        frkLabel = null;
+        carLabel = null;
+        serialNumberOdd = null;
+        vowelInSerialNumber = null;
+        parallelPort = null;
+        strikes = null;
     }
 }
+
 
 

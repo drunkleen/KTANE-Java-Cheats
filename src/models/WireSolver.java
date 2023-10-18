@@ -5,7 +5,6 @@ import static models.WireManager.*;
 public class WireSolver {
     private static final WireManager wireManager = new WireManager();
 
-
     private WireSolver() {
     }
 
@@ -38,7 +37,7 @@ public class WireSolver {
             System.out.println("Invalid wire count");
         }
 
-        return "ashnajkhbisa";
+        return "Wire count invalid.";
     }
 
 }
