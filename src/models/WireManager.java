@@ -1,17 +1,21 @@
 package models;
 
+import lombok.Data;
+
 import java.util.Scanner;
 
 import static models.StringUtils.ANSI_WHITE;
 import static models.StringUtils.ANSI_YELLOW;
 
+@Data
 public class WireManager {
-    public static int wireCount = 0;
-    public static int redWireCount = 0;
-    public static int blueWireCount = 0;
-    public static int blackWireCount = 0;
-    public static int yellowWireCount = 0;
-    public static int whiteWireCount = 0;
+    public int wireCount = 0;
+    public int redWireCount = 0;
+    public int blueWireCount = 0;
+    public int blackWireCount = 0;
+    public int yellowWireCount = 0;
+    public int whiteWireCount = 0;
+
 
     BombInformations bombInformations = new BombInformations();
     private static String[] wireColors;

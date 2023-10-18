@@ -18,20 +18,20 @@ public class WireSolver {
     private static String solver() {
         BombInformations bombInformations = new BombInformations();
         String[] wireColors = wireManager.wireColors();
-        wireCount = wireColors.length;
+        wireManager.setWireCount(wireColors.length);
 
         wireManager.setColorCount();
 
-        if (wireCount == 3) {
+        if (wireManager.getWireCount() == 3) {
             return wireManager.solveIfThreeWires();
 
-        } else if (wireCount == 4) {
+        } else if (wireManager.getWireCount() == 4) {
             return wireManager.solveIfFourWires();
 
-        } else if (wireCount == 5) {
+        } else if (wireManager.getWireCount() == 5) {
             return wireManager.solveIfFiveWires();
 
-        } else if (wireCount == 6) {
+        } else if (wireManager.getWireCount() == 6) {
             return wireManager.solveIfSixWires();
         } else {
             System.out.println("Invalid wire count");

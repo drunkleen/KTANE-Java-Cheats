@@ -74,4 +74,41 @@ public class StringUtils {
         }
     }
 
+    public void askUserForChoiceButtonLabel() {
+        utils.clearScreen();
+        System.out.println(utils.title(
+                "Which label does the button have?"
+        ));
+        System.out.println(
+                """
+                        1. Detonate.
+                        2. Hold.
+                        3. Press.
+                        4. Abort.
+                        """
+        );
+    }
+
+    public void askUserForChoiceButtonColor() {
+        utils.clearScreen();
+        System.out.println(utils.title("Which color does the button have?"));
+        System.out.println(
+                        "1. " + ANSI_RED + "Red.\n" + ANSI_WHITE +
+                        "2. " + ANSI_YELLOW + "Yellow.\n" + ANSI_WHITE +
+                        "3. " + ANSI_BLUE + "Blue.\n" + ANSI_WHITE +
+                        "4. " + ANSI_WHITE + "White." + ANSI_WHITE
+        );
+    }
+
+    public void askUserForButtonLightColor() {
+        utils.clearScreen();
+        System.out.println(utils.title("Which is the light?"));
+        System.out.println(
+                "1. " + ANSI_RED + "Red.\n" + ANSI_WHITE +
+                        "2. " + ANSI_YELLOW + "Yellow.\n" + ANSI_WHITE +
+                        "3. " + ANSI_BLUE + "Blue.\n" + ANSI_WHITE +
+                        "4. " + ANSI_WHITE + "White." + ANSI_WHITE
+        );
+    }
+
 }

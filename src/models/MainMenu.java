@@ -1,5 +1,6 @@
 package models;
 
+import java.awt.*;
 import java.util.Scanner;
 
 import static models.StringUtils.ANSI_RED;
@@ -24,6 +25,8 @@ public class MainMenu {
 
             if (userChoice == 1) {
                 WireSolver.initializeWireSolver();
+            } else if (userChoice == 2) {
+                ButtonSolver.initializeButtonSolver();
             } else if (userChoice == 4) {
                 PasswordSolver.initializePasswordSolver();
             } else if (userChoice == 0) {
