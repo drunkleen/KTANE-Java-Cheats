@@ -4,80 +4,79 @@ import lombok.Data;
 
 import java.util.Scanner;
 
-import static packages.StringUtils.ANSI_WHITE;
-import static packages.StringUtils.ANSI_YELLOW;
+import static packages.StringUtils.*;
 
 @Data
 public class WireManager {
-    public int wireCount = 0;
-    public int redWireCount = 0;
-    public int blueWireCount = 0;
-    public int blackWireCount = 0;
-    public int yellowWireCount = 0;
-    public int whiteWireCount = 0;
+    private int wireCount = 0;
+    private int redWireCount = 0;
+    private int blueWireCount = 0;
+    private int blackWireCount = 0;
+    private int yellowWireCount = 0;
+    private int whiteWireCount = 0;
 
 
-    BombInformations bombInformations = new BombInformations();
-    private static String[] wireColors;
+    BombInformation bombInformation = new BombInformation();
+    private String[] wireColors;
 
     public String solveIfThreeWires() {
         if (redWireCount == 0) {
-            resetColorCount();
+            this.resetColorCount();
             return "cut the 2nd wire.";
         } else if (blueWireCount > 1) {
-            resetColorCount();
+            this.resetColorCount();
             return "cut the last blue wire.";
         } else {
-            resetColorCount();
+            this.resetColorCount();
             return "cut the last wire.";
         }
     }
 
     public String solveIfFourWires() {
-        if (redWireCount > 1 && bombInformations.getSerialNumberOdd()) {
-            resetColorCount();
-            return "cut the last red wire.";
-        } else if ((wireColors[wireColors.length - 1].equals("yellow") && redWireCount == 0) || blueWireCount == 1) {
-            resetColorCount();
-            return "cut the 1st wire.";
+        if (redWireCount > 1 && bombInformation.getSerialNumberOdd()) {
+            this.resetColorCount();
+            return CUT_LAST_RED_WIRE;
+        } else if ((wireColors[wireColors.length - 1].equals(YELLOW) && redWireCount == 0) || blueWireCount == 1) {
+            this.resetColorCount();
+            return CUT_FIRST_WIRE;
         } else if (yellowWireCount > 1) {
-            resetColorCount();
-            return "cut the last wire.";
+            this.resetColorCount();
+            return CUT_LAST_WIRE;
         } else {
-            resetColorCount();
-            return "cut the 2nd wire.";
+            this.resetColorCount();
+            return CUT_SECOND_WIRE;
         }
     }
 
     public String solveIfFiveWires() {
-        if (wireColors[wireColors.length - 1].equals("black") && bombInformations.getSerialNumberOdd()) {
-            resetColorCount();
-            return "cut the 4th wire.";
+        if (wireColors[wireColors.length - 1].equals(BLACK) && bombInformation.getSerialNumberOdd()) {
+            this.resetColorCount();
+            return CUT_FOURTH_WIRE;
         } else if (redWireCount == 1 && yellowWireCount > 1) {
-            resetColorCount();
-            return "cut the 1st wire.";
+            this.resetColorCount();
+            return CUT_FIRST_WIRE;
         } else if (blackWireCount == 0) {
-            resetColorCount();
-            return "cut the 2nd wire.";
+            this.resetColorCount();
+            return CUT_SECOND_WIRE;
         } else {
-            resetColorCount();
-            return "cut the 1nd wire.";
+            this.resetColorCount();
+            return CUT_FIRST_WIRE;
         }
     }
 
     public String solveIfSixWires() {
-        if (yellowWireCount == 0 && bombInformations.getSerialNumberOdd()) {
-            resetColorCount();
-            return "cut the 3th wire.";
+        if (yellowWireCount == 0 && bombInformation.getSerialNumberOdd()) {
+            this.resetColorCount();
+            return CUT_THIRD_WIRE;
         } else if (yellowWireCount == 1 && whiteWireCount > 1) {
-            resetColorCount();
-            return "cut the 4th wire.";
+            this.resetColorCount();
+            return CUT_FOURTH_WIRE;
         } else if (redWireCount == 0) {
-            resetColorCount();
-            return "cut the last wire.";
+            this.resetColorCount();
+            return CUT_LAST_WIRE;
         } else {
-            resetColorCount();
-            return "cut the 4th wire.";
+            this.resetColorCount();
+            return CUT_FOURTH_WIRE;
         }
     }
 
@@ -90,6 +89,7 @@ public class WireManager {
         String userInputWires = scanner.nextLine().toLowerCase();
         userInputWires = userInputWires.replace(" ", "");
         wireColors = userInputWires.split(",");
+        scanner.close();
         return userInputWires.split(",");
     }
 
@@ -102,29 +102,33 @@ public class WireManager {
         whiteWireCount = 0;
     }
 
-
     public void countUp(String wireColor) {
-        if (wireColor.equals("red")) redWireCount++;
-        if (wireColor.equals("blue")) blueWireCount++;
-        if (wireColor.equals("yellow")) yellowWireCount++;
-        if (wireColor.equals("black")) blackWireCount++;
-        if (wireColor.equals("white")) whiteWireCount++;
+        if (wireColor.equals(RED)) redWireCount++;
+        if (wireColor.equals(BLUE)) blueWireCount++;
+        if (wireColor.equals(YELLOW)) yellowWireCount++;
+        if (wireColor.equals(BLACK)) blackWireCount++;
+        if (wireColor.equals(WHITE)) whiteWireCount++;
 
     }
 
     public void setColorCount() {
         for (String wire : wireColors) {
-            if (wire.equals("red")) {
-                countUp("red");
-            } else if (wire.equals("blue")) {
-                countUp("blue");
-            } else if (wire.equals("black")) {
-                countUp("black");
-            } else if (wire.equals("yellow")) {
-                countUp("yellow");
-            } else if (wire.equals("white")) {
-                countUp("white");
-            } else {
+            if (wire.equals(RED)) {
+                countUp(RED);
+            }
+            else if (wire.equals(BLUE)) {
+                countUp(BLUE);
+            }
+            else if (wire.equals(BLACK)) {
+                countUp(BLACK);
+            }
+            else if (wire.equals(YELLOW)) {
+                countUp(YELLOW);
+            }
+            else if (wire.equals(WHITE)) {
+                countUp(WHITE);
+            }
+            else {
                 System.out.println("Color " + wire + " not Found");
             }
         }

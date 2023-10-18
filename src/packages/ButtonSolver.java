@@ -3,19 +3,16 @@ package packages;
 import java.util.Scanner;
 
 public class ButtonSolver {
-    private static final StringUtils stringUtils = new StringUtils();
+    private final StringUtils stringUtils = new StringUtils();
 
-    private ButtonSolver() {
-    }
-
-    public static void initializeButtonSolver() {
+    public void initializeButtonSolver() {
         Utils utils = new Utils();
-        String solvedText = solver();
+        String solvedText = this.solver();
         utils.clearScreen();
         System.out.println(utils.solvationText(solvedText));
     }
 
-    private static String solver() {
+    private String solver() {
         stringUtils.askUserForChoiceButtonLabel();
         Scanner scanner = new Scanner(System.in);
 
@@ -23,6 +20,7 @@ public class ButtonSolver {
         stringUtils.askUserForChoiceButtonColor();
         int buttonColorChoice = scanner.nextInt();
         ButtonManager buttonManager = new ButtonManager();
+        scanner.close();
         return buttonManager.solve(buttonChoice, buttonColorChoice);
     }
 }

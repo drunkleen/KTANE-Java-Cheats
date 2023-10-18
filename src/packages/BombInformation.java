@@ -1,21 +1,25 @@
 package packages;
 
+import lombok.Data;
+
 import java.util.Scanner;
 
-public class BombInformations {
-    public static Integer batteryCount = null;
-    public static Boolean frkLabel = null;
-    public static Boolean carLabel = null;
-    public static Boolean serialNumberOdd = null;
-    public static Boolean vowelInSerialNumber = null;
-    public static Boolean parallelPort = null;
-    public static Integer strikes = null;
+@Data
+public class BombInformation {
+    private static Integer batteryCount = null;
+    private static Boolean frkLabel = null;
+    private static Boolean carLabel = null;
+    private static Boolean serialNumberOdd = null;
+    private static Boolean vowelInSerialNumber = null;
+    private static Boolean parallelPort = null;
+    private static Integer strikes = null;
 
     public int getBatteryCount() {
         if (batteryCount == null) {
             Scanner scanner = new Scanner(System.in);
-            System.out.println("How many battery do you have (0-10)? ");
+            System.out.println("How many batteries do you have? (0-10) ");
             batteryCount = scanner.nextInt();
+            scanner.close();
         }
         return batteryCount;
     }
@@ -25,11 +29,8 @@ public class BombInformations {
             Scanner scanner = new Scanner(System.in);
             System.out.println("is there a lit indicator with label FRK (y/n)? ");
             String userInput = scanner.nextLine().toLowerCase();
-            if (userInput.equals("y") || userInput.equals("yes")) {
-                frkLabel = true;
-            } else {
-                frkLabel = false;
-            }
+            frkLabel = userInput.equals("y") || userInput.equals("yes");
+            scanner.close();
         }
         return frkLabel;
     }
@@ -39,11 +40,8 @@ public class BombInformations {
             Scanner scanner = new Scanner(System.in);
             System.out.println("is there a lit indicator with label CAR (y/n)? ");
             String userInput = scanner.nextLine().toLowerCase();
-            if (userInput.equals("y") || userInput.equals("yes")) {
-                carLabel = true;
-            } else {
-                carLabel = false;
-            }
+            carLabel = userInput.equals("y") || userInput.equals("yes");
+            scanner.close();
         }
         return carLabel;
     }
@@ -53,11 +51,8 @@ public class BombInformations {
             Scanner scanner = new Scanner(System.in);
             System.out.println("is the serial number odd (y/n)? ");
             String userInput = scanner.nextLine().toLowerCase();
-            if (userInput.equals("y") || userInput.equals("yes")) {
-                serialNumberOdd = true;
-            } else {
-                serialNumberOdd = false;
-            }
+            serialNumberOdd = userInput.equals("y") || userInput.equals("yes");
+            scanner.close();
         }
         return serialNumberOdd;
     }
@@ -67,11 +62,8 @@ public class BombInformations {
             Scanner scanner = new Scanner(System.in);
             System.out.println("is the serial number contains vowel (y/n)? ");
             String userInput = scanner.nextLine().toLowerCase();
-            if (userInput.equals("y") || userInput.equals("yes")) {
-                vowelInSerialNumber = true;
-            } else {
-                vowelInSerialNumber = false;
-            }
+            vowelInSerialNumber = userInput.equals("y") || userInput.equals("yes");
+            scanner.close();
         }
         return vowelInSerialNumber;
     }
@@ -81,11 +73,8 @@ public class BombInformations {
             Scanner scanner = new Scanner(System.in);
             System.out.println("is there any parallel ports (y/n)? ");
             String userInput = scanner.nextLine().toLowerCase();
-            if (userInput.equals("y") || userInput.equals("yes")) {
-                parallelPort = true;
-            } else {
-                parallelPort = false;
-            }
+            parallelPort = userInput.equals("y") || userInput.equals("yes");
+            scanner.close();
         }
         return carLabel;
     }

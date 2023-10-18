@@ -12,6 +12,25 @@ public class StringUtils {
     public static final String ANSI_PURPLE = "\u001B[35m";
     public static final String ANSI_CYAN = "\u001B[36m";
     public static final String ANSI_WHITE = "\u001B[37m";
+    public static final String RED = "red";
+    public static final String WHITE = "white";
+    public static final String BLACK = "black";
+    public static final String BLUE = "blue";
+    public static final String YELLOW = "yellow";
+    public static final String GREEN = "green";
+    public static final String CUT_LAST_RED_WIRE = "cut the last red wire.";
+    public static final String CUT_FIRST_WIRE = "cut the 1st wire.";
+    public static final String CUT_SECOND_WIRE = "cut the 2nd wire.";
+    public static final String CUT_THIRD_WIRE = "cut the 3th wire.";
+    public static final String CUT_FOURTH_WIRE = "cut the 4th wire.";
+    public static final String CUT_LAST_WIRE = "cut the last wire.";
+
+
+
+
+
+
+
 
     Utils utils = new Utils();
 
@@ -44,20 +63,21 @@ public class StringUtils {
 
         System.out.print("write fifth characters [you can seperate them with ,]: ");
         entries[4] = scanner.nextLine();
+        scanner.close();
         return entries;
     }
 
     public int strikeManager() {
-        BombInformations bombInformations = new BombInformations();
-        if (bombInformations.getStrikes() >= 3) {
-            bombInformations.resetBombInformation();
+        BombInformation bombInformation = new BombInformation();
+        if (bombInformation.getStrikes() >= 3) {
+            bombInformation.resetBombInformation();
         }
-        return bombInformations.getStrikes();
+        return bombInformation.getStrikes();
     }
 
     public void askUserForChoice() {
         utils.clearScreen();
-        BombInformations bombInformations = new BombInformations();
+        BombInformation bombInformation = new BombInformation();
         System.out.println(utils.title("Welcome to KTANE Cheat!!!"));
         System.out.println(
                 """
@@ -67,10 +87,10 @@ public class StringUtils {
                         4. Password Solver.
                         """
         );
-        if (bombInformations.getStrikes() <= 0) {
+        if (bombInformation.getStrikes() <= 0) {
             System.out.println("0. Strike");
         } else {
-            System.out.println("0. Strike" + "[" + bombInformations.getStrikes() + "]");
+            System.out.println("0. Strike" + "[" + bombInformation.getStrikes() + "]");
         }
     }
 

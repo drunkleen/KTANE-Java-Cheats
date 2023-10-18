@@ -1,26 +1,20 @@
 package packages;
 
 
-import java.util.Scanner;
-
 public class PasswordSolver {
-    private static final StringUtils stringUtils = new StringUtils();
+    private final StringUtils stringUtils = new StringUtils();
 
-
-    private PasswordSolver() {
-    }
-
-    public static void initializePasswordSolver() {
+    public void initializePasswordSolver() {
         Utils utils = new Utils();
-        Scanner scanner = new Scanner(System.in);
-        String solvedText = solver();
+//        Scanner scanner = new Scanner(System.in); //not used
+        String solvedText = this.solver();
         utils.clearScreen();
         System.out.println(utils.solvationText(solvedText));
 
 //        scanner.nextLine();
     }
 
-    private static String solver() {
+    private String solver() {
         String[] passwordEntries = stringUtils.getPasswordEntries();
         for (String word : stringUtils.getWords()) {
             if (

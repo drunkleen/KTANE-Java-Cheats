@@ -3,18 +3,15 @@ package packages;
 public class WireSolver {
     private static final WireManager wireManager = new WireManager();
 
-    private WireSolver() {
-    }
-
-    public static void initializeWireSolver() {
+    public void initializeWireSolver() {
         Utils utils = new Utils();
         String solvedText = solver();
         utils.clearScreen();
         System.out.println(utils.solvationText(solvedText));
     }
 
-    private static String solver() {
-        BombInformations bombInformations = new BombInformations();
+    private String solver() {
+//        BombInformation bombInformation = new BombInformation(); //not used
         String[] wireColors = wireManager.wireColors();
         wireManager.setWireCount(wireColors.length);
 

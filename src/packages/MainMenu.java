@@ -6,15 +6,17 @@ import static packages.StringUtils.ANSI_RED;
 import static packages.StringUtils.ANSI_WHITE;
 
 public class MainMenu {
-    private static final StringUtils stringUtils = new StringUtils();
-    private static final Utils utils = new Utils();
+    private final StringUtils stringUtils = new StringUtils();
+    private final Utils utils = new Utils();
+    private final WireSolver wireSolver = new WireSolver();
+    private final ButtonSolver buttonSolver = new ButtonSolver();
+    private final SimonSaysSolver simonSaysSolver = new SimonSaysSolver();
+    private final PasswordSolver passwordSolver = new PasswordSolver();
 
-    private MainMenu() {
-    }
+    public void showMenu() {
 
-    public static void showMenu() {
         Scanner scanner = new Scanner(System.in);
-        BombInformations bombInformations = new BombInformations();
+        BombInformation bombInformation = new BombInformation();
 
         boolean status = true;
 
@@ -22,42 +24,72 @@ public class MainMenu {
             stringUtils.askUserForChoice();
             int userChoice = scanner.nextInt();
 
-            if (userChoice == 1) {
-                WireSolver.initializeWireSolver();
-            } else if (userChoice == 2) {
-                ButtonSolver.initializeButtonSolver();
-            } else if (userChoice == 3) {
-                SimonSaysSolver.initializeSimonSaysSolver();
-            } else if (userChoice == 4) {
-                PasswordSolver.initializePasswordSolver();
-            } else if (userChoice == 0) {
-                bombInformations.strikeUp();
-            } else {
-                status = false;
-                break;
+            switch (userChoice) {
+                case 1:
+                    wireSolver.initializeWireSolver();
+                case 2:
+                    buttonSolver.initializeButtonSolver();
+                case 3:
+                    simonSaysSolver.initializeSimonSaysSolver();
+                case 4:
+                    passwordSolver.initializePasswordSolver();
+                case 0:
+                    bombInformation.strikeUp();
+                default:
+                    status = false;
+                    break;
             }
-            if (bombInformations.getStrikes() > 2) {
-                bombInformations.resetBombInformation();
+
+            if (bombInformation.getStrikes() > 2) {
+                bombInformation.resetBombInformation();
                 pressToPlayAgain();
             } else if (userChoice == 0) {
                 continue;
             } else {
                 pressToContinue();
             }
+            scanner.close();
 
         }
     }
 
-    public static void pressToContinue() {
+    public void pressToContinue() {
         System.out.println(utils.boldText("\nPress 'Enter' to return."));
         Scanner scanner = new Scanner(System.in);
         scanner.nextLine();
+        scanner.close();
     }
 
-    public static void pressToPlayAgain() {
+    public void pressToPlayAgain() {
         System.out.println(utils.boldText(ANSI_RED + "\nYou Lost!" + ANSI_WHITE + "\nPress 'Enter' to play again."));
         Scanner scanner = new Scanner(System.in);
         scanner.nextLine();
+        scanner.close();
     }
 
 }
+
+
+
+
+
+
+//            if (userChoice == 1) {
+//                    wireSolver.initializeWireSolver();
+//                    }
+//                    else if (userChoice == 2) {
+//                    buttonSolver.initializeButtonSolver();
+//                    }
+//                    else if (userChoice == 3) {
+//                    simonSaysSolver.initializeSimonSaysSolver();
+//                    }
+//                    else if (userChoice == 4) {
+//                    passwordSolver.initializePasswordSolver();
+//                    }
+//                    else if (userChoice == 0) {
+//                    bombInformation.strikeUp();
+//                    }
+//                    else {
+//                    status = false;
+//                    break;
+//                    }

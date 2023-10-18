@@ -3,89 +3,110 @@ package packages;
 import static packages.StringUtils.*;
 
 public class SimonSaysManager {
-    static BombInformations bombInformations = new BombInformations();
+    private final BombInformation bombInformation = new BombInformation();
 
-    public static String solve(int flashChoice) {
-        if (bombInformations.getStrikes() == 0) {
+    public String solve(int flashChoice) {
+        if (bombInformation.getStrikes() == 0) {
             return zeroStrikeSolver(flashChoice);
-        } else if (bombInformations.getStrikes() == 1) {
+        }
+        else if (bombInformation.getStrikes() == 1) {
             return oneStrikeSolver(flashChoice);
-        } else if (bombInformations.getStrikes() == 2) {
+        }
+        else if (bombInformation.getStrikes() == 2) {
             return twoStrikeSolver(flashChoice);
-        } else {
+        }
+        else {
             return "-1";
         }
     }
 
-    private static String zeroStrikeSolver(int flashChoice) {
-        if (bombInformations.getvowelInSerialNumber()) {
+    private String zeroStrikeSolver(int flashChoice) {
+        if (bombInformation.getvowelInSerialNumber()) {
             if (flashChoice == 1) {
-                return (ANSI_BLUE + "Blue" + ANSI_WHITE);
-            } else if (flashChoice == 2) {
-                return (ANSI_GREEN + "Green" + ANSI_WHITE);
-            } else if (flashChoice == 3) {
-                return (ANSI_RED + "Red" + ANSI_WHITE);
-            } else {
-                return (ANSI_YELLOW + "Yellow" + ANSI_WHITE);
+                return (ANSI_BLUE + BLUE + ANSI_WHITE);
+            }
+            else if (flashChoice == 2) {
+                return (ANSI_GREEN + GREEN + ANSI_WHITE);
+            }
+            else if (flashChoice == 3) {
+                return (ANSI_RED + RED + ANSI_WHITE);
+            }
+            else {
+                return (ANSI_YELLOW + YELLOW + ANSI_WHITE);
             }
         } else {
             if (flashChoice == 1) {
-                return (ANSI_BLUE + "Blue" + ANSI_WHITE);
-            } else if (flashChoice == 2) {
-                return (ANSI_RED + "Red" + ANSI_WHITE);
-            } else if (flashChoice == 3) {
-                return (ANSI_YELLOW + "Yellow" + ANSI_WHITE);
-            } else {
-                return (ANSI_GREEN + "Green" + ANSI_WHITE);
+                return (ANSI_BLUE + BLUE + ANSI_WHITE);
+            }
+            else if (flashChoice == 2) {
+                return (ANSI_RED + RED + ANSI_WHITE);
+            }
+            else if (flashChoice == 3) {
+                return (ANSI_YELLOW + YELLOW + ANSI_WHITE);
+            }
+            else {
+                return (ANSI_GREEN + GREEN + ANSI_WHITE);
             }
         }
 
     }
 
-    private static String oneStrikeSolver(int flashChoice) {
-        if (bombInformations.getvowelInSerialNumber()) {
+    private String oneStrikeSolver(int flashChoice) {
+        if (bombInformation.getvowelInSerialNumber()) {
             if (flashChoice == 1) {
-                return (ANSI_YELLOW + "Yellow" + ANSI_WHITE);
-            } else if (flashChoice == 2) {
-                return (ANSI_RED + "Red" + ANSI_WHITE);
-            } else if (flashChoice == 3) {
-                return (ANSI_GREEN + "Green" + ANSI_WHITE);
-            } else {
-                return (ANSI_BLUE + "Blue" + ANSI_WHITE);
+                return (ANSI_YELLOW + YELLOW + ANSI_WHITE);
+            }
+            else if (flashChoice == 2) {
+                return (ANSI_RED + RED + ANSI_WHITE);
+            }
+            else if (flashChoice == 3) {
+                return (ANSI_GREEN + GREEN + ANSI_WHITE);
+            }
+            else {
+                return (ANSI_BLUE + BLUE + ANSI_WHITE);
             }
         } else {
             if (flashChoice == 1) {
-                return (ANSI_RED + "Red" + ANSI_WHITE);
-            } else if (flashChoice == 2) {
-                return (ANSI_GREEN + "Green" + ANSI_WHITE);
-            } else if (flashChoice == 3) {
-                return (ANSI_BLUE + "Blue" + ANSI_WHITE);
-            } else {
-                return (ANSI_YELLOW + "Yellow" + ANSI_WHITE);
+                return (ANSI_RED + RED + ANSI_WHITE);
+            }
+            else if (flashChoice == 2) {
+                return (ANSI_GREEN + GREEN + ANSI_WHITE);
+            }
+            else if (flashChoice == 3) {
+                return (ANSI_BLUE + BLUE + ANSI_WHITE);
+            }
+            else {
+                return (ANSI_YELLOW + YELLOW + ANSI_WHITE);
             }
         }
     }
 
-    private static String twoStrikeSolver(int flashChoice) {
-        if (bombInformations.getvowelInSerialNumber()) {
+    private String twoStrikeSolver(int flashChoice) {
+        if (bombInformation.getvowelInSerialNumber()) {
             if (flashChoice == 1) {
-                return (ANSI_GREEN + "Green" + ANSI_WHITE);
-            } else if (flashChoice == 2) {
-                return (ANSI_BLUE + "Blue" + ANSI_WHITE);
-            } else if (flashChoice == 3) {
-                return (ANSI_RED + "Red" + ANSI_WHITE);
-            } else {
-                return (ANSI_YELLOW + "Yellow" + ANSI_WHITE);
+                return (ANSI_GREEN + GREEN + ANSI_WHITE);
+            }
+            else if (flashChoice == 2) {
+                return (ANSI_BLUE + BLUE + ANSI_WHITE);
+            }
+            else if (flashChoice == 3) {
+                return (ANSI_RED + RED + ANSI_WHITE);
+            }
+            else {
+                return (ANSI_YELLOW + YELLOW + ANSI_WHITE);
             }
         } else {
             if (flashChoice == 1) {
-                return (ANSI_YELLOW + "Yellow" + ANSI_WHITE);
-            } else if (flashChoice == 2) {
-                return (ANSI_RED + "Red" + ANSI_WHITE);
-            } else if (flashChoice == 3) {
-                return (ANSI_GREEN + "Green" + ANSI_WHITE);
-            } else {
-                return (ANSI_BLUE + "Blue" + ANSI_WHITE);
+                return (ANSI_YELLOW + YELLOW + ANSI_WHITE);
+            }
+            else if (flashChoice == 2) {
+                return (ANSI_RED + RED + ANSI_WHITE);
+            }
+            else if (flashChoice == 3) {
+                return (ANSI_GREEN + GREEN + ANSI_WHITE);
+            }
+            else {
+                return (ANSI_BLUE + BLUE + ANSI_WHITE);
             }
         }
     }

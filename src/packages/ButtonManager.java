@@ -3,20 +3,20 @@ package packages;
 import java.util.Scanner;
 
 public class ButtonManager {
-    BombInformations bombInformations = new BombInformations();
+    BombInformation bombInformation = new BombInformation();
     StringUtils stringUtils = new StringUtils();
 
     public String solve(int buttonChoice, int buttonColorChoice) {
         if (buttonColorChoice == 3 && buttonChoice == 4) {
             return buttonHeld();
 
-        } else if (bombInformations.getBatteryCount() > 1 && buttonChoice == 1) {
+        } else if (bombInformation.getBatteryCount() > 1 && buttonChoice == 1) {
             return "press and immediately release.";
 
-        } else if (buttonColorChoice == 4 && bombInformations.getCarLabel()) {
+        } else if (buttonColorChoice == 4 && bombInformation.getCarLabel()) {
             return buttonHeld();
 
-        } else if (bombInformations.getBatteryCount() > 2 && bombInformations.getFrkLabel()) {
+        } else if (bombInformation.getBatteryCount() > 2 && bombInformation.getFrkLabel()) {
             return "press and immediately release";
 
         } else if (buttonColorChoice == 2) {
