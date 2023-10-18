@@ -30,7 +30,6 @@ public class SimonSaysSolver {
             simonSaysColorList.add(simonSaysManager.solve(flashChoice));
             System.out.println(utils.solvationText(String.valueOf(simonSaysColorList)));
         }
-        scanner.close();
     }
 
 }

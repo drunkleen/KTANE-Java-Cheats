@@ -89,7 +89,6 @@ public class WireManager {
         String userInputWires = scanner.nextLine().toLowerCase();
         userInputWires = userInputWires.replace(" ", "");
         wireColors = userInputWires.split(",");
-        scanner.close();
         return userInputWires.split(",");
     }
 

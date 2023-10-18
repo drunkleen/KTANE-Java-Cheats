@@ -19,7 +19,6 @@ public class BombInformation {
             Scanner scanner = new Scanner(System.in);
             System.out.println("How many batteries do you have? (0-10) ");
             batteryCount = scanner.nextInt();
-            scanner.close();
         }
         return batteryCount;
     }
@@ -30,7 +29,6 @@ public class BombInformation {
             System.out.println("is there a lit indicator with label FRK (y/n)? ");
             String userInput = scanner.nextLine().toLowerCase();
             frkLabel = userInput.equals("y") || userInput.equals("yes");
-            scanner.close();
         }
         return frkLabel;
     }
@@ -41,7 +39,6 @@ public class BombInformation {
             System.out.println("is there a lit indicator with label CAR (y/n)? ");
             String userInput = scanner.nextLine().toLowerCase();
             carLabel = userInput.equals("y") || userInput.equals("yes");
-            scanner.close();
         }
         return carLabel;
     }
@@ -52,7 +49,6 @@ public class BombInformation {
             System.out.println("is the serial number odd (y/n)? ");
             String userInput = scanner.nextLine().toLowerCase();
             serialNumberOdd = userInput.equals("y") || userInput.equals("yes");
-            scanner.close();
         }
         return serialNumberOdd;
     }
@@ -63,7 +59,6 @@ public class BombInformation {
             System.out.println("is the serial number contains vowel (y/n)? ");
             String userInput = scanner.nextLine().toLowerCase();
             vowelInSerialNumber = userInput.equals("y") || userInput.equals("yes");
-            scanner.close();
         }
         return vowelInSerialNumber;
     }
@@ -74,7 +69,6 @@ public class BombInformation {
             System.out.println("is there any parallel ports (y/n)? ");
             String userInput = scanner.nextLine().toLowerCase();
             parallelPort = userInput.equals("y") || userInput.equals("yes");
-            scanner.close();
         }
         return carLabel;
     }

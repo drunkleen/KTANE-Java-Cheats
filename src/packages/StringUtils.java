@@ -63,7 +63,6 @@ public class StringUtils {
 
         System.out.print("write fifth characters [you can seperate them with ,]: ");
         entries[4] = scanner.nextLine();
-        scanner.close();
         return entries;
     }
 

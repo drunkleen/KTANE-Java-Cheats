@@ -20,7 +20,6 @@ public class ButtonSolver {
         stringUtils.askUserForChoiceButtonColor();
         int buttonColorChoice = scanner.nextInt();
         ButtonManager buttonManager = new ButtonManager();
-        scanner.close();
         return buttonManager.solve(buttonChoice, buttonColorChoice);
     }
 }
