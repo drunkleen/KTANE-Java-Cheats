@@ -37,6 +37,9 @@ public class MainMenu {
             else if (userChoice == 4) {
                 problemSolver.solvePassword();
             }
+            else if (userChoice == 5) {
+                problemSolver.solveWhosOnFirst();
+            }
             else if (userChoice == 0) {
                 bombInformation.strikeUp();
             }

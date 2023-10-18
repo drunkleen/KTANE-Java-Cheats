@@ -1,9 +1,6 @@
 package core.facade;
 
-import core.service.ButtonService;
-import core.service.PasswordService;
-import core.service.SimonSaysService;
-import core.service.WireService;
+import core.service.*;
 
 public class ProblemSolverImpl {
 
@@ -25,6 +22,11 @@ public class ProblemSolverImpl {
     public void solvePassword() {
         PasswordService passwordService = new PasswordService();
         passwordService.initializePasswordSolver();
+    }
+
+    public void solveWhosOnFirst() {
+        WhosOnFirstService whosOnFirstService = new WhosOnFirstService();
+        whosOnFirstService.initializeWhosOnFirst();
     }
 
 }
