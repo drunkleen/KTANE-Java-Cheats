@@ -35,7 +35,6 @@ public class MazeService {
         else {
             System.out.println("No solution");
         }
-
     }
 
     public int[][] mazePatternFinder() {
@@ -47,25 +46,7 @@ public class MazeService {
         System.out.println("input the second circle coordinates (eg. x, y)");
         String[] secondPoint = scanner.nextLine().replace(" ", "").split(",");
 
-        if (
-                ((Integer.parseInt(firstPoint[0]) == 1 && Integer.parseInt(firstPoint[1]) == 2) &&
-                (Integer.parseInt(secondPoint[0]) == 6 && Integer.parseInt(secondPoint[1]) == 3))
-                ||
-                ((Integer.parseInt(firstPoint[0]) == 6 && Integer.parseInt(firstPoint[1]) == 3) &&
-                (Integer.parseInt(secondPoint[0]) == 1 && Integer.parseInt(secondPoint[1]) == 2))
-        ) {
-            return mazeUtils.getFirstMaze();
-        }
-        else if (
-                ((Integer.parseInt(firstPoint[0]) == 2 && Integer.parseInt(firstPoint[1]) == 4) &&
-                (Integer.parseInt(secondPoint[0]) == 5 && Integer.parseInt(secondPoint[1]) == 2))
-                ||
-                ((Integer.parseInt(firstPoint[0]) == 5 && Integer.parseInt(firstPoint[1]) == 2) &&
-                (Integer.parseInt(secondPoint[0]) == 2 && Integer.parseInt(secondPoint[1]) == 4))
-        ) {
-            return mazeUtils.getSecondtMaze();
-        }
-        return null;
+        return mazeUtils.getMaze(firstPoint, secondPoint);
     }
 
     public int[][] solveMaze(int posX, int posY, int endX, int endY ,int[][] maze ) {

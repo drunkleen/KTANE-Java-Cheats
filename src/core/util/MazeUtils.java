@@ -30,6 +30,31 @@ public class MazeUtils {
         }
     }
 
+    public int[][] getMaze(String[] firstPoint, String[] secondPoint) {
+        if (
+
+                (pointChecker(firstPoint, 1,2) && pointChecker(secondPoint, 6,3)) ||
+                (pointChecker(firstPoint, 6,3) && pointChecker(secondPoint, 1,2))
+        ) {
+            return getFirstMaze();
+        }
+        else if (
+                (pointChecker(firstPoint, 2,4) && pointChecker(secondPoint, 5,2)) ||
+                (pointChecker(firstPoint, 5,2) && pointChecker(secondPoint, 2,4))
+        ) {
+            return getSecondtMaze();
+        }
+        return null;
+    }
+
+    private boolean pointChecker(String[] pointsToCheck, int pointX, int pointY ){
+        if (Integer.parseInt(pointsToCheck[0]) == pointX && Integer.parseInt(pointsToCheck[1]) == pointY) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public int[][] getMazeDirections() {
         return new int[][]
                 {
@@ -39,7 +64,6 @@ public class MazeUtils {
                 {-1, 0}
                 };
     }
-
 
     public int[][] getFirstMaze() {
         return new int[][] {
