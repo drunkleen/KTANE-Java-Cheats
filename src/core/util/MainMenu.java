@@ -40,6 +40,9 @@ public class MainMenu {
             else if (userChoice == 5) {
                 problemSolver.solveWhosOnFirst();
             }
+            else if (userChoice == 6) {
+                problemSolver.solveMaze();
+            }
             else if (userChoice == 0) {
                 bombInformation.strikeUp();
             }

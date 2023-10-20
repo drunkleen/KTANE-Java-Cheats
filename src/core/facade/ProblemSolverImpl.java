@@ -29,4 +29,9 @@ public class ProblemSolverImpl {
         whosOnFirstService.initializeWhosOnFirst();
     }
 
+    public void solveMaze() {
+        MazeService mazeService = new MazeService();
+        mazeService.initializeMazeSolver();
+    }
+
 }

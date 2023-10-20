@@ -33,12 +33,6 @@ public class StringUtils {
     public static final String BR = "Bottom Right";
 
 
-
-
-
-
-
-
     Utils utils = new Utils();
 
 
@@ -85,6 +79,8 @@ public class StringUtils {
 
         return map;
     }
+
+
     public HashMap<String, String> getWhosOnFirstHashMapSecondStep() {
         HashMap<String, String> map = new HashMap<>();
         map.put("READY", " YES, OKAY, WHAT, MIDDLE, LEFT, PRESS, RIGHT, BLANK, READY, NO, FIRST, UHHH, NOTHING, WAIT");
@@ -118,6 +114,11 @@ public class StringUtils {
 
         return map;
     }
+
+
+
+
+
     public String[] getPasswordEntries() {
         Scanner scanner = new Scanner(System.in);
         String[] entries = new String[5];
@@ -158,6 +159,7 @@ public class StringUtils {
                         3. Simon Says Solver.
                         4. Password Solver.
                         5. Who’s on First.
+                        6. Maze.
                         """
         );
         if (bombInformation.getStrikes() <= 0) {
@@ -186,7 +188,7 @@ public class StringUtils {
         utils.clearScreen();
         System.out.println(utils.title("Which color does the button have?"));
         System.out.println(
-                        "1. " + ANSI_RED + "Red.\n" + ANSI_WHITE +
+                "1. " + ANSI_RED + "Red.\n" + ANSI_WHITE +
                         "2. " + ANSI_YELLOW + "Yellow.\n" + ANSI_WHITE +
                         "3. " + ANSI_BLUE + "Blue.\n" + ANSI_WHITE +
                         "4. " + ANSI_WHITE + "White." + ANSI_WHITE
@@ -209,9 +211,9 @@ public class StringUtils {
         System.out.println(utils.title("Which is the light?"));
         System.out.println(
                 "1. " + ANSI_RED + "Red.\n" + ANSI_WHITE +
-                "2. " + ANSI_YELLOW + "Yellow.\n" + ANSI_WHITE +
-                "3. " + ANSI_BLUE + "Blue.\n" + ANSI_WHITE +
-                "4. " + ANSI_GREEN + "Green." + ANSI_WHITE
+                        "2. " + ANSI_YELLOW + "Yellow.\n" + ANSI_WHITE +
+                        "3. " + ANSI_BLUE + "Blue.\n" + ANSI_WHITE +
+                        "4. " + ANSI_GREEN + "Green." + ANSI_WHITE
         );
     }
 
